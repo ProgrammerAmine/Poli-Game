@@ -1,0 +1,29 @@
+﻿title: Geert
+tags:
+position: -117,-410
+---
+Geert: Hey stem pvv, we boeien islam niet meer zo erg. *kruis vingers achter rug
+    -> Is goed nu je stopt met islam haat ben ik mee.
+        <<jump RightResponse>>
+    -> Het voelt alsof je liegt weet je zeker dat je islam niet meer haat?
+        <<jump LeftResponse>>
+    -> nah
+        <<jump MiddleResponse>>
+===
+title: RightResponse
+position: 306,86
+---
+HAHA dombo ik had mijn vingers gekruisd achter mijn rug. Terug naar je eigen land kut marokkaan.
+===
+
+title: LeftResponse
+position: -319,53
+---
+Ik zweer het op mijn kleine wit hartje.
+===
+
+title: MiddleResponse
+position: -97,49
+---
+KOM HIER VIEZERIK!
+===
