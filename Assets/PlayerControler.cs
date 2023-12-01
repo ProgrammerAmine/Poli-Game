@@ -7,10 +7,12 @@ public class PlayerControler : MonoBehaviour
 {
     public float speed;
     public float groundDist;
+    public Animator animator;
 
     public LayerMask terrainLayer;
     public Rigidbody rb;
-    public SpriteRenderer sr;
+    public float rotatespeed;
+    
     private bool canMove;
     // Start is called before the first frame update
     void Start()
@@ -46,25 +48,44 @@ public class PlayerControler : MonoBehaviour
             }
         }
 
-        if( !canMove) return;
+        float x = 0.0f;
+        float y = 0.0f;
+        Vector3 moveDir = Vector3.zero;
 
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(x, 0, y);
-        rb.velocity = moveDir * speed;
-        // flip de sprite als hij de andere kant kijkt.
-        if (x != 0 && x < 0)
-        {
-            sr.flipX = true;
-        
-        
-        }
-        else if (x != 0 && x > 0)
-        {
-            sr.flipX = false;
-        
+        if( canMove) {
 
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+            moveDir = new Vector3(x, 0, y);
+            rb.velocity = moveDir * speed;
+            // flip de sprite als hij de andere kant kijkt.
+            // if (x != 0 && x < 0)
+            // {
+            //     sr.flipX = true;
+            
+            
+            // }
+            // else if (x != 0 && x > 0)
+            // {
+            //     sr.flipX = false;
+            
+
+            // }
+
+             
+               
+            
         }
+        
+        animator.SetFloat("Speed",(Mathf.Abs(x) + Mathf.Abs(y))/2);
+
+       
+        if(moveDir == Vector3.zero) return;
+        moveDir.Normalize();
+        Quaternion toRotatation = Quaternion.LookRotation(moveDir,Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,toRotatation,rotatespeed*Time.deltaTime);
+
+        
 
     }
 }
