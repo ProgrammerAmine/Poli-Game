@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -10,16 +11,27 @@ public class PlayerControler : MonoBehaviour
     public LayerMask terrainLayer;
     public Rigidbody rb;
     public SpriteRenderer sr;
+    private bool canMove;
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = gameObject.GetComponent<Rigidbody>();
         // Ziet de speler en maakt het lichaam
+        canMove = true;
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        //dit gebruik je als je de interact knop samen wilt voegen met een andere interactie
+
         // Ziet hoogte en laagte verschillen in het 3d veld en zorgt dat hij en pixel boven de grond zweeft.
         RaycastHit hit;
         Vector3 castPos = transform.position;
@@ -33,6 +45,8 @@ public class PlayerControler : MonoBehaviour
                 transform.position = movePos;
             }
         }
+
+        if( !canMove) return;
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
