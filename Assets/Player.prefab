@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7835493693326249654}
   - component: {fileID: -3388470140865357841}
-  - component: {fileID: 6769480843182145814}
+  - component: {fileID: 2716897517600831991}
   m_Layer: 0
   m_Name: LilGuy
   m_TagString: Untagged
@@ -195,7 +195,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000590676, y: 0.011493828, z: 0.0000056233257}
     m_Extent: {x: 0.006154881, y: 0.012933813, z: 0.010166554}
   m_DirtyAABB: 0
---- !u!114 &6769480843182145814
+--- !u!114 &2716897517600831991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,11 +204,12 @@ MonoBehaviour:
   m_GameObject: {fileID: -5235891335544642817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed0849014cc81b74f9250efb3095c9b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d5bb29308ddf394eabd907c54d74fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0.104
-  shaderColorManager: {fileID: 6769480843182145814}
+  LeftColor: {r: 1, g: 0, b: 0, a: 0}
+  RightColor: {r: 0.02352941, g: 0.8467429, b: 1, a: 0}
+  rend: {fileID: 0}
 --- !u!1 &-2706142982164333209
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: -8679921383154817045}
-  - component: {fileID: 1541479711726882726}
+  - component: {fileID: 5107725447351709046}
   m_Layer: 0
   m_Name: lilguy
   m_TagString: Untagged
@@ -369,7 +370,7 @@ Transform:
   - {fileID: 7835493693326249654}
   m_Father: {fileID: 836997960494847612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1541479711726882726
+--- !u!95 &5107725447351709046
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -501,6 +502,7 @@ GameObject:
   - component: {fileID: 4051090151433275914}
   - component: {fileID: 6174091749537658222}
   - component: {fileID: 2153354233550003696}
+  - component: {fileID: 3427577463762139260}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -566,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   groundDist: 0
-  animator: {fileID: 1541479711726882726}
+  animator: {fileID: 5107725447351709046}
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -607,7 +609,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65d492ca220f094686d115b5c90dd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderColorManager: {fileID: 6769480843182145814}
+  shaderColorManager: {fileID: 2716897517600831991}
+--- !u!136 &3427577463762139260
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2892920379393201773}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.6977642
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.3097755, z: 0}
 --- !u!1 &5528860797864257434
 GameObject:
   m_ObjectHideFlags: 0
