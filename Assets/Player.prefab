@@ -104,8 +104,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7835493693326249654}
   - component: {fileID: -3388470140865357841}
-  - component: {fileID: 5432276111694858872}
   - component: {fileID: 6769480843182145814}
+  - component: {fileID: 5432276111694858872}
   m_Layer: 0
   m_Name: LilGuy
   m_TagString: Untagged
@@ -196,20 +196,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000590676, y: 0.011493828, z: 0.0000056233257}
     m_Extent: {x: 0.006154881, y: 0.012933813, z: 0.010166554}
   m_DirtyAABB: 0
---- !u!114 &5432276111694858872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: -5235891335544642817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed0849014cc81b74f9250efb3095c9b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 0.104
-  shaderColorManager: {fileID: 6769480843182145814}
 --- !u!114 &6769480843182145814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +211,20 @@ MonoBehaviour:
   LeftColor: {r: 1, g: 0, b: 0, a: 0}
   RightColor: {r: 0, g: 1, b: 0.9623866, a: 0}
   rend: {fileID: 0}
+--- !u!114 &5432276111694858872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -5235891335544642817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0849014cc81b74f9250efb3095c9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0.104
+  shaderColorManager: {fileID: 6769480843182145814}
 --- !u!1 &-2706142982164333209
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,10 +400,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   groundDist: 0
+  animator: {fileID: 0}
   terrainLayer:
     serializedVersion: 2
     m_Bits: 0
   rb: {fileID: 0}
+  rotatespeed: 0
 --- !u!136 &821967609805285162
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -600,10 +602,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   groundDist: -0.19
+  animator: {fileID: 0}
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64
   rb: {fileID: 0}
+  rotatespeed: 0
 --- !u!1 &5528860797864257434
 GameObject:
   m_ObjectHideFlags: 0

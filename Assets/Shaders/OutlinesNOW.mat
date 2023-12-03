@@ -37,8 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color_Threshold: 6.98
-    - _Depth_Threshold: 0.00208
+    - _Color_Threshold: 4
+    - _Depth_Threshold: 0.00015
     - _Fullscreen_AlphaBlendOperation: 0
     - _Fullscreen_BlendMode: 5
     - _Fullscreen_ColorBlendOperation: 1
@@ -55,7 +55,7 @@ Material:
     - _Fullscreen_StencilReadMask: 255
     - _Fullscreen_StencilReference: 0
     - _Fullscreen_StencilWriteMask: 255
-    - _Normal_Threshold: 1
+    - _Normal_Threshold: 0.4
     - _Overlay: 0
     - _QueueControl: 0
     - _QueueOffset: 0
