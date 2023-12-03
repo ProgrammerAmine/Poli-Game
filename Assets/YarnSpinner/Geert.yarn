@@ -2,28 +2,51 @@
 tags:
 position: -117,-410
 ---
+
 Geert: Hey stem pvv, we boeien islam niet meer zo erg. *kruis vingers achter rug
-    -> Is goed nu je stopt met islam haat ben ik mee.
-        <<jump RightResponse>>
+    -> Is goed nu je stopt met islam haat ben ik mee. 
+    <<set $right_side += 1>>
+    Geert: ok het boeit ons een beetje. *geeft een klein eleboogtjuh.
+    -> ok wel een kleeein beetje.
+        <<set $right_side += 1>>
+        <<jump KickEnding>>
     -> Het voelt alsof je liegt weet je zeker dat je islam niet meer haat?
         <<jump LeftResponse>>
     -> nah
         <<jump MiddleResponse>>
 ===
 title: RightResponse
-position: 306,86
+position: 326,-124
 ---
 HAHA dombo ik had mijn vingers gekruisd achter mijn rug. Terug naar je eigen land kut marokkaan.
+<<jump KickEnding>>
 ===
 
 title: LeftResponse
-position: -319,53
+position: -479,-100
 ---
 Ik zweer het op mijn kleine wit hartje.
+<<jump KickEnding>>
 ===
 
 title: MiddleResponse
-position: -97,49
+position: 19,-105
 ---
 KOM HIER VIEZERIK!
+<<jump KickEnding>>
+===
+
+
+title: KickEnding
+position: -81,292
+---
+// einde geert gesprek
+Geert: Ik ben hier voor alle Nederlandurs!
+Lilguy: Zelfs de Marokkanen?
+<<if $right_side > 2>>
+    Geert: Zelfs de Marokkanen. *maakt kruis van vingers.
+    Lilguy: ok ik doe mee.
+<<else>>
+    Rob Jette: kick in Lilguy's gezicht en lilguy valt.
+<<endif>>
 ===

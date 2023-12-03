@@ -17,6 +17,7 @@ public class ShaderColorManager : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer> ();
+        CharacterValue = 0.5f;
     }
     private void SetCharacterValue(float newValue) 
     {
