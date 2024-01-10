@@ -1,31 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterControlsMap))]
 public class PlayerControler : MonoBehaviour
 {
     public float speed;
     public float groundDist;
     public Animator animator;
-
+    private CharacterControlsMap controller;
     public LayerMask terrainLayer;
     public Rigidbody rb;
     public float rotatespeed;
     
+    private Vector2 movementInput = Vector2.zero;
+
+    [SerializeField] private LineView lineView;
+    
     private bool canMove;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        //controller = new CharacterControlsMap();
+        //controller.Enable();
         rb = gameObject.GetComponent<Rigidbody>();
         // Ziet de speler en maakt het lichaam
         canMove = true;
     }
 
+    public void OnMove(InputAction.CallbackContext context){
+        Debug.Log("Testing");
+        movementInput = context.ReadValue<Vector2>();
+    }
     public void SetCanMove(bool value)
     {
         canMove = value;
+    }
+
+    public void OnDialogClicked(InputAction.CallbackContext context) {
+        if(!lineView.gameObject.active) return;
+        lineView.OnContinueClicked();
     }
 
     // Update is called once per frame
@@ -52,29 +66,12 @@ public class PlayerControler : MonoBehaviour
         float y = 0.0f;
         Vector3 moveDir = Vector3.zero;
 
-        if( canMove) {
-
-            x = Input.GetAxis("Horizontal");
-            y = Input.GetAxis("Vertical");
-            moveDir = new Vector3(x, 0, y);
-            rb.velocity = moveDir * speed;
-            // flip de sprite als hij de andere kant kijkt.
-            // if (x != 0 && x < 0)
-            // {
-            //     sr.flipX = true;
-            
-            
-            // }
-            // else if (x != 0 && x > 0)
-            // {
-            //     sr.flipX = false;
-            
-
-            // }
-
-             
-               
-            
+        if( canMove) 
+        {
+            x = movementInput.x;
+            y = movementInput.y;
+            moveDir = new Vector3(movementInput.x, 0, movementInput.y);
+            rb.velocity = moveDir * speed;    
         }
         
         animator.SetFloat("Speed",(Mathf.Abs(x) + Mathf.Abs(y))/2);
