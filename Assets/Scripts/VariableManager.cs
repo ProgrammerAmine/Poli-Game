@@ -16,6 +16,6 @@ public class VariableManager : MonoBehaviour
         variableStorage.TryGetValue<float>("$right_side", out temp);
 
         Debug.Log($"The right side value is: {temp}");
-        shaderColorManager.CharacterValue += temp/10;
+        shaderColorManager.CharacterValue = temp/20 + 0.5f;
     }
 }

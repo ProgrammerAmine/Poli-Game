@@ -4,7 +4,7 @@ using UnityEngine;
 using Yarn.Unity;
 
 public enum DialogueTypes{
-    Geert, Ali_B,
+    Geert, Ali_B, Karel, Japie, Joost,
 }
 
 public class DialogueTrigger : MonoBehaviour
@@ -24,6 +24,15 @@ public class DialogueTrigger : MonoBehaviour
                     break;
                 case DialogueTypes.Ali_B:
                     dialogueRunner.StartDialogue("Ali_B");
+                    break;
+                case DialogueTypes.Karel:
+                    dialogueRunner.StartDialogue("Karel");
+                    break;
+                case DialogueTypes.Japie:
+                    dialogueRunner.StartDialogue("Japie");
+                    break;
+                case DialogueTypes.Joost:
+                    dialogueRunner.StartDialogue("Joost");
                     break;
             }
     }

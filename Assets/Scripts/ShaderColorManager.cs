@@ -23,7 +23,7 @@ public class ShaderColorManager : MonoBehaviour
     {
         characterValue = newValue;
         rend.material.SetColor("_MainColor", Color.Lerp(LeftColor, RightColor, characterValue));
-        rend.material.SetFloat("_xDitherStretch", 1 - characterValue);
-        rend.material.SetFloat("_yDitherStretch", characterValue);
+        rend.material.SetFloat("_xDitherStretch", (characterValue * 2));
+        rend.material.SetFloat("_yDitherStretch", 1 - ((characterValue - 0.5f) * 2));
     }
 }
