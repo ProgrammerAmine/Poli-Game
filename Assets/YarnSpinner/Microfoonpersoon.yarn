@@ -22,12 +22,12 @@ position: 368,-469
     De Microfoon Persoon kijkt jou aan.
     Microfoon Persoon: Jij vindt toch ook dat we moeten stoppen met de oogst van spruitjes?
     -> Ja we moeten stoppen ik ben sowieso klaar met spruitjes. Ze zijn beetje iew.
-        <<set $right_side = $right_side - 1>>
+        <<set $right_side = $right_side - 2>>
         <<jump Microfoonpersoon1o1>>
     -> Ik denk het misschien.
         <<jump Microfoonpersoon1o2>>
     -> Nee spruitjes mogen blijven.
-        <<set $right_side = $right_side + 1>>
+        <<set $right_side = $right_side + 2>>
         <<jump Microfoonpersoon1o3>>
         
 ===

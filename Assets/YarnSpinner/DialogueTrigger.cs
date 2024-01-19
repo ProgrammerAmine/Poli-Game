@@ -4,7 +4,7 @@ using UnityEngine;
 using Yarn.Unity;
 
 public enum DialogueTypes{
-    Geert, Ali_B, Japie, Joost, Karel, Nienke, Paul, Hugo, Janneke, Microfoonpersoon,
+    Geert, Ali_B, Japie, Joost, Karel, Nienke, Paul, Hugo, Janneke, Microfoonpersoon, Megafoonpersoon, Klaus, Niels, Johny,
 }
 
 public class DialogueTrigger : MonoBehaviour
@@ -17,7 +17,8 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") == true){
+       if (collision.gameObject.CompareTag("Player") == true){
+            DialogueRunner dialogueRunner = collision.gameObject.GetComponentInChildren<DialogueRunner>();
                 switch (dialogueType){
                 case DialogueTypes.Geert:
                     dialogueRunner.StartDialogue("Geert");
@@ -48,6 +49,18 @@ public class DialogueTrigger : MonoBehaviour
                     break;
                 case DialogueTypes.Microfoonpersoon:
                     dialogueRunner.StartDialogue("Microfoonpersoon");
+                    break;
+                case DialogueTypes.Megafoonpersoon:
+                    dialogueRunner.StartDialogue("Megafoonpersoon");
+                    break;
+                case DialogueTypes.Johny:
+                    dialogueRunner.StartDialogue("Johny");
+                    break;
+                case DialogueTypes.Niels:
+                    dialogueRunner.StartDialogue("Niels");
+                    break;
+                case DialogueTypes.Klaus:
+                    dialogueRunner.StartDialogue("Klaus");
                     break;
             }
         }

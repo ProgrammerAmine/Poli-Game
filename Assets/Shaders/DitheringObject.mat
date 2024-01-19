@@ -60,7 +60,7 @@ Material:
     m_Floats:
     - _Ambient: 0
     - _Brightness_Rim: 0
-    - _ColorResolution: 2
+    - _ColorResolution: 1
     - _DitherRotation: 0
     - _DitherSpread: -2.43
     - _QueueControl: 0
