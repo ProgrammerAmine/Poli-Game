@@ -34,6 +34,7 @@ title: Karel1o1
 position: 685,-378
 color: purple
 ---
+    <<SetMolotovActive MolotovParent>>
     Je ziet een steekvlam opgaan in de verte.
     Karel: Lekker bezig!
 ===
@@ -45,6 +46,7 @@ color: yellow
     Karel: Dan gooi ik de <color=\#7fff00>molotov-cocktail</color> zelf wel!
     <<KarelThrow  Karel>>
     <<wait  2>>
+    <<SetMolotovActive MolotovParent>>
     Je ziet een steekvlam opgaan in de verte.
     Karel: Zo goed had jij de <color=\#7fff00>molotov-cocktail</color> toch niet kunnen werpen!
 ===

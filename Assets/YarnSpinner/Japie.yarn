@@ -33,6 +33,7 @@ position: 542,-266
 color: yellow
 ---
     Je ziet een gaswolk ontstaan in de verte.
+    <<SetTeargasActive TraangasParent>>
     Japie: Mooi werk!
 ===
 title: Japie1o2
@@ -43,6 +44,7 @@ color: purple
     Japie: Dan werp ik de <color=\#7f00ff>traangas</color> zelf wel!
     <<JapieThrow Japie>>
     <<wait 2>>
+    <<SetTeargasActive TraangasParent>>
     Je ziet een gaswolk ontstaan in de verte.
     Japie: Geen dank aan jou!
 ===

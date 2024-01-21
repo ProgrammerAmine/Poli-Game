@@ -7,8 +7,9 @@ public class JapieThrow : MonoBehaviour
 {
 public Animator animator;
 [YarnCommand("JapieThrow")]
-    public void japieThrow() {
-        Debug.Log($"Japie werpt traangas.");
-        animator.SetTrigger("Throw");
-    }
+    public void japieThrow()
+        {
+            Debug.Log($"Japie werpt traangas.");
+            animator.SetTrigger("Throw");
+        }
 }

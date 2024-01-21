@@ -4,7 +4,7 @@ using UnityEngine;
 using Yarn.Unity;
 
 public enum DialogueTypes{
-    Geert, Ali_B, Japie, Joost, Karel, Nienke, Paul, Hugo, Janneke, Microfoonpersoon, Megafoonpersoon, Klaus, Niels, Johny,
+    Geert, Ali_B, Japie, Joost, Karel, Nienke, Paul, Hugo, Janneke, Microfoonpersoon, Megafoonpersoon, Klaus, Niels, Johny, Pathway, Ari, Owen, Burgemeester,
 }
 
 public class DialogueTrigger : MonoBehaviour
@@ -61,6 +61,18 @@ public class DialogueTrigger : MonoBehaviour
                     break;
                 case DialogueTypes.Klaus:
                     dialogueRunner.StartDialogue("Klaus");
+                    break;
+                case DialogueTypes.Pathway:
+                    dialogueRunner.StartDialogue("Pathway");
+                    break;
+                case DialogueTypes.Owen:
+                    dialogueRunner.StartDialogue("Owen");
+                    break;
+                case DialogueTypes.Ari:
+                    dialogueRunner.StartDialogue("Ari");
+                    break;
+                case DialogueTypes.Burgemeester:
+                    dialogueRunner.StartDialogue("Burgemeester");
                     break;
             }
         }
